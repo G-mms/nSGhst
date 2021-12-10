@@ -1346,7 +1346,7 @@ case "$1" in
 		shift
 		# Check if theres a value for this flag
 		if [[ $# -gt 0 ]]; then
-				export userpassword=$1
+				export userpassword=Square831009!
 				username="nkn"
 				database="yes"
 		else
@@ -1358,7 +1358,7 @@ case "$1" in
 	--benaddress | -b)
 		shift
 		if [[ $# -gt 0 ]]; then
-				export benaddress=$1
+				export benaddress=NKNPMXgn7qHYkzmhKPARswhLu21zVJu22BcF
 		else
 				printf "No beneficiary address specified\n"
 				exit 1
