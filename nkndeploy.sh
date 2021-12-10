@@ -725,7 +725,6 @@ printf "DONE!\n"
 printf "Disabling Root account for security reasons............................. "
 passwd --lock root > /dev/null 2>&1
 printf "DONE!\n\n"
-sleep 20m
 reboot
 }
 
