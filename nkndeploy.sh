@@ -763,7 +763,7 @@ printf "Server password: %s\n\n" "$userpassword"
 printf "Thanks for using this script!\n\n"
 
 read -s -r -p "Press enter to continue!"
-menu
+exit 0
 }
 
 ################################# NODE CHECKER #################################
