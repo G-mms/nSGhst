@@ -725,44 +725,6 @@ printf "DONE!\n"
 printf "Disabling Root account for security reasons............................. "
 passwd --lock root > /dev/null 2>&1
 printf "DONE!\n\n"
-install4
-}
-
-function install4(){
-printf "===============================================================================\n"
-printf "Congratulations, you deployed a NKN node!\n"
-printf "===============================================================================\n\n"
-
-printf "%s" "$red"
-printf "Check the status of your new node on www.nstatus.org\n"
-printf "Use this server IP address: %s\n\n" "$PUBLIC_IP"
-
-printf "The new NKN server will take some time to sync up, keep checking it\n"
-printf "until the site gives you this error: No ID in this account...\n\n"
-
-printf "Then send 10 NKN (mainnet token) to the address it provides, AKA:\n"
-nodewallet=$(sed -r 's/^.*Address":"([^"]+)".*/\1/' "$DIR"wallet.json)
-printf "%s\n\n" "$nodewallet"
-
-printf "Keep checking on nstatus to see when the server activates.\n\n"
-printf "%s" "$normal"
-
-printf "%s" "$blue"
-printf "NKN wallet (beneficiary adddress) where you will get paid to:\n"
-printf "%s\n\n" "$benaddress"
-printf "%s" "$normal"
-
-printf "From now on use these settings to connect to your server:\n"
-printf "If you're using AWS, Google Cloud, Azure... use the provided SSH keys to login.\n\n"
-
-printf "Server IP: %s\n" "$PUBLIC_IP"
-printf "SSH login: ssh %s@%s\n" "$username" "$PUBLIC_IP"
-printf "Server username: %s\n" "$username"
-printf "Server password: %s\n\n" "$userpassword"
-
-printf "Thanks for using this script!\n\n"
-
-read -s -r -p "Press enter to continue!"
 exit 0
 }
 
