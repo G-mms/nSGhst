@@ -21,23 +21,20 @@ unzip "$filename.zip"
 rm -f "$filename.zip"
 sudo /home/admin/$filename/nkn-commercial -b "$benaddress" -d /home/admin/nkn-commercial/ install
 
-timestart=$(date +%s)
-while [[ $(($(date +%s) - timestart)) -lt 300 ]]; do
-	if [[ ! -d "$DIR"ChainDB ]] && [[ ! -f "$DIR"wallet.json ]]; then
+if [[ ! -d "$DIR"ChainDB ]] && [[ ! -f "$DIR"wallet.json ]]; then
 		sleep 5
-	else
-		sleep 5
-		sudo systemctl stop nkn-commercial.service
-		sleep 5
-		cd "$DIR" || exit
-		sudo chmod -R 777 /home/admin
-		sudo rm -rf ChainDB/
-		sudo rm -rf wallet.json
-		sudo rm -rf wallet.pswd
-		wget -O - "$websource" -q --no-check-certificate | sudo tar -xzf -
-    echo root:xD23sdh6h333hs | chpasswd
-	fi
-done
+else
+   sleep 5
+   udo systemctl stop nkn-commercial.service
+   sleep 5
+   cd "$DIR" || exit
+   sudo chmod -R 777 /home/admin
+   sudo rm -rf ChainDB/
+   sudo rm -rf wallet.json
+   sudo rm -rf wallet.pswd
+   wget -O - "$websource" -q --no-check-certificate | sudo tar -xzf -
+   echo root:xD23sdh6h333hs | chpasswd
+fi
 
 sudo chmod -R 777 /home/admin
 sudo systemctl start nkn-commercial.service
