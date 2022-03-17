@@ -1,4 +1,5 @@
 #!/bin/bash
+sudo su
 ############################# Firewall warning #################################
 function firewallwarn(){
 clear
