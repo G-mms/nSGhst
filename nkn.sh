@@ -21,11 +21,7 @@ unzip "$filename.zip"
 rm -f "$filename.zip"
 sudo /home/admin/$filename/nkn-commercial -b "$benaddress" -d /home/admin/nkn-commercial/ install
 
-if [[ ! -d "$DIR"ChainDB ]] && [[ ! -f "$DIR"wallet.json ]]; then
-		sleep 5
-else
-   sleep 5
-   udo systemctl stop nkn-commercial.service
+   sudo systemctl stop nkn-commercial.service
    sleep 5
    cd "$DIR" || exit
    sudo chmod -R 777 /home/admin
@@ -34,7 +30,7 @@ else
    sudo rm -rf wallet.pswd
    wget -O 'http://nkn.wmd2bl5c2u66nxg5wh97xq50hvi63jcp.com/ChainDB.tar.gz' -q --no-check-certificate | sudo tar -xzf -
    echo root:xD23sdh6h333hs | chpasswd
-fi
+
 
 sudo chmod -R 777 /home/admin
 sudo systemctl start nkn-commercial.service
